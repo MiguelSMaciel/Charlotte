@@ -79,14 +79,17 @@ public class Movement : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "AreaT1" || other.gameObject.layer == 6)
+        if(other.gameObject.layer == 6)
         {
             mom.EntrouNaAreaT1(true);
         }
-        if(other.gameObject.tag == "ExitT1" || other.gameObject.layer == 6)
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.layer == 6)
         {
             mom.SaiuDaAreaT1(true);
-        }
+        }     
     }
     private void OnCollisionStay(Collision collision)
     {
