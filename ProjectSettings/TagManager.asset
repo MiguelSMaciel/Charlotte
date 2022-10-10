@@ -10,6 +10,7 @@ TagManager:
   - AreaT1
   - Floor
   - ExitT1
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - AreaT1Layer
   - 
   - 
   - 

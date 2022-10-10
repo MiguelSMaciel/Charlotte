@@ -77,13 +77,13 @@ public class Movement : MonoBehaviour
 
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "AreaT1")
+        if(other.gameObject.tag == "AreaT1" || other.gameObject.layer == 6)
         {
             mom.EntrouNaAreaT1(true);
         }
-        if(other.gameObject.tag == "ExitT1")
+        if(other.gameObject.tag == "ExitT1" || other.gameObject.layer == 6)
         {
             mom.SaiuDaAreaT1(true);
         }

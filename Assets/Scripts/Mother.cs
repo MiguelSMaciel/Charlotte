@@ -14,33 +14,40 @@ public class Mother : MonoBehaviour
     bool ART1;
     private Movement player;
 
+    public float timeT1;
+    public bool T1Defeat;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         ART1 = false;
+        T1Defeat = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(ART1 == true)
+        if (T1Defeat == false)
         {
-            if (vidaT1 > 0)
+            if (ART1 == true)
             {
-                if (onda < 10)
+                if (vidaT1 > 0)
                 {
-                    tempo++;
-                    if (tempo > 300)
+                    if (onda < 10)
                     {
-                        tempo = 0;
-                        int numero = onda * 5;
-                        for (int i = 0; i < numero; i++)
+                        tempo++;
+                        if (tempo > 300)
                         {
-                            Instantiate(Inimigo1, spawnInimigo.transform.position, Quaternion.identity);
-                        }
-                        onda++;
+                            tempo = 0;
+                            int numero = onda * 5;
+                            for (int i = 0; i < numero; i++)
+                            {
+                                Instantiate(Inimigo1, spawnInimigo.transform.position, Quaternion.identity);
+                            }
+                            onda++;
 
+                        }
                     }
                 }
             }
@@ -53,6 +60,11 @@ public class Mother : MonoBehaviour
         if (entrou == true)
         {
             ART1 = true;
+            timeT1 += Time.deltaTime;
+            if(timeT1 >= 10f)
+            {
+                T1Defeat = true;
+            }
         }
     }
     public void SaiuDaAreaT1(bool saiu)
@@ -60,6 +72,7 @@ public class Mother : MonoBehaviour
         if (saiu == true)
         {
             ART1 = false;
+            timeT1 = 0f;
         }
     }
 }
