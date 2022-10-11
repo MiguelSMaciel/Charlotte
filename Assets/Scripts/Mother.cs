@@ -4,18 +4,31 @@ using UnityEngine;
 
 public class Mother : MonoBehaviour
 {
-    public GameObject spawnInimigo;
+    public GameObject spawnT1;
+    public GameObject spawnT2;
+    public GameObject spawnT3;
 
     public GameObject Inimigo1;
+    public GameObject Inimigo2;
+    public GameObject Inimigo3;
+    public GameObject Inimigo4;
+
     public int onda = 1;
     public float tempo;
 
-    public float vidaT1;
     bool ART1;
+    bool ART2;
+    bool ART3;
     private Movement player;
 
-    public float timeT1;
+    private float timeT1;
     public bool T1Defeat;
+
+    private float timeT2;
+    public bool T2Defeat;
+
+    private float timeT3;
+    public bool T3Defeat;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +36,10 @@ public class Mother : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         ART1 = false;
         T1Defeat = false;
+        ART2 = false;
+        T2Defeat = false;
+        ART3 = false;
+        T3Defeat = false;
     }
 
     // Update is called once per frame
@@ -31,25 +48,68 @@ public class Mother : MonoBehaviour
         if (T1Defeat == false)
         {
             if (ART1 == true)
+            {              
+                 if (onda < 1000)
+                 {
+                 tempo++;
+                 if (tempo > 300)
+                 {
+                   tempo = 0;
+                   int numero = onda * 1;
+                   for (int i = 0; i < numero; i++)
+                   {
+                       Instantiate(Inimigo1, spawnT1.transform.position, Quaternion.identity);
+                   }
+                       onda++;
+
+                 }
+                 }                
+            }
+        }
+        if (T2Defeat == false)
+        {
+            if (ART2 == true)
             {
-                if (vidaT1 > 0)
-                {
-                    if (onda < 10)
+                
+                    if (onda < 1000)
                     {
                         tempo++;
                         if (tempo > 300)
                         {
                             tempo = 0;
-                            int numero = onda * 5;
+                            int numero = onda * 1;
                             for (int i = 0; i < numero; i++)
                             {
-                                Instantiate(Inimigo1, spawnInimigo.transform.position, Quaternion.identity);
+                                Instantiate(Inimigo2, spawnT2.transform.position, Quaternion.identity);
                             }
                             onda++;
 
                         }
                     }
-                }
+                
+            }
+        }
+        if (T3Defeat == false)
+        {
+            if (ART3 == true)
+            {
+                
+                    if (onda < 1000)
+                    {
+                        tempo++;
+                        if (tempo > 300)
+                        {
+                            tempo = 0;
+                            int numero = onda * 1;
+                            for (int i = 0; i < numero; i++)
+                            {
+                                Instantiate(Inimigo3, spawnT3.transform.position, Quaternion.identity);
+                            }
+                            onda++;
+
+                        }
+                    }
+                
             }
         }
     }
@@ -73,6 +133,46 @@ public class Mother : MonoBehaviour
         {
             ART1 = false;
             timeT1 = 0f;
+        }
+    }
+    public void EntrouNaAreaT2(bool entrou)
+    {
+        if (entrou == true)
+        {
+            ART2 = true;
+            timeT2 += Time.deltaTime;
+            if (timeT2 >= 10f)
+            {
+                T2Defeat = true;
+            }
+        }
+    }
+    public void SaiuDaAreaT2(bool saiu)
+    {
+        if (saiu == true)
+        {
+            ART2 = false;
+            timeT2 = 0f;
+        }
+    }
+    public void EntrouNaAreaT3(bool entrou)
+    {
+        if (entrou == true)
+        {
+            ART3 = true;
+            timeT3 += Time.deltaTime;
+            if (timeT3 >= 10f)
+            {
+                T3Defeat = true;
+            }
+        }
+    }
+    public void SaiuDaAreaT3(bool saiu)
+    {
+        if (saiu == true)
+        {
+            ART3 = false;
+            timeT3 = 0f;
         }
     }
 }

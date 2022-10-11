@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.tag == "AreaAtkHeroi")
         {
-            statsScript.health -= 20;
+            statsScript.health -= 40;
         }
     }
 }

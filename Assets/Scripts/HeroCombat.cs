@@ -84,10 +84,6 @@ public class HeroCombat : MonoBehaviour
             {
                 targetedEnemy.GetComponent<Stats>().health -= statsScript.attackDmg;
             }
-            if (targetedEnemy.GetComponent<Targetable>().enemyType == Targetable.EnemyType.Torre1)
-            {
-                targetedEnemy.GetComponent<Mother>().vidaT1 -= statsScript.attackDmg;
-            }
         }
 
         performMeleeAttack = true;

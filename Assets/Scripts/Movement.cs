@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         statsScripts = GetComponent<Stats>();
-        mom = GameObject.FindGameObjectWithTag("T1").GetComponent<Mother>();
+        mom = GameObject.FindGameObjectWithTag("T1").GetComponent<Mother>();       
         agent = gameObject.GetComponent<NavMeshAgent>();
         heroCombatScript = GetComponent<HeroCombat>();
     }
@@ -83,13 +83,29 @@ public class Movement : MonoBehaviour
         {
             mom.EntrouNaAreaT1(true);
         }
+        if (other.gameObject.layer == 7)
+        {
+            mom.EntrouNaAreaT2(true);
+        }
+        if (other.gameObject.layer == 8)
+        {
+            mom.EntrouNaAreaT3(true);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.layer == 6)
         {
             mom.SaiuDaAreaT1(true);
-        }     
+        }
+        if (other.gameObject.layer == 7)
+        {
+            mom.SaiuDaAreaT2(true);
+        }
+        if (other.gameObject.layer == 8)
+        {
+            mom.SaiuDaAreaT3(true);
+        }
     }
     private void OnCollisionStay(Collision collision)
     {
