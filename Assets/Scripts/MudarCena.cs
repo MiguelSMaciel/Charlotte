@@ -14,6 +14,7 @@ public class MudarCena : MonoBehaviour
     {
         mom = GameObject.FindGameObjectWithTag("T1").GetComponent<Mother>();
         CenaControl = GetComponent<MudarCena>();
+        minhaCena = 1;
     }
 
     // Update is called once per frame
