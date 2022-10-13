@@ -273,7 +273,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: c3847c3f18f166242b33d78160ad182c, type: 3}
+      m_Icon: {fileID: 2800000, guid: 0a7e189d94707ee499db265fcf49f3fb, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -729,8 +729,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Template_3D
-  metroPackageVersion: 
+  metroPackageName: Template3D
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -738,7 +738,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Template_3D
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Charlotte's cult
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
