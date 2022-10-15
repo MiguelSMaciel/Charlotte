@@ -11,10 +11,14 @@ public class Mother : MonoBehaviour
     public GameObject Inimigo1;
     public GameObject Inimigo2;
     public GameObject Inimigo3;
-    public GameObject Inimigo4;
+
+    public GameObject vela;
+    public GameObject localVela;
 
     public int onda = 1;
     public float tempo;
+
+    private float time;
 
     bool ART1;
     bool ART2;
@@ -40,6 +44,8 @@ public class Mother : MonoBehaviour
         T2Defeat = false;
         ART3 = false;
         T3Defeat = false;
+
+        time = 0;
     }
 
     // Update is called once per frame
@@ -110,6 +116,14 @@ public class Mother : MonoBehaviour
                         }
                     }
                 
+            }
+        }
+        if (T1Defeat == true)
+        {
+            time++;
+            if (time <= 1)
+            {
+            Instantiate(vela, localVela.transform.position, Quaternion.identity);
             }
         }
     }
