@@ -55,13 +55,13 @@ public class Mother : MonoBehaviour
         {
             if (ART1 == true)
             {              
-                 if (onda < 1000)
+                 if (onda < 100)
                  {
                  tempo++;
-                 if (tempo > 300)
+                 if (tempo > 150)
                  {
                    tempo = 0;
-                   int numero = onda * 1;
+                   int numero = onda * 2;
                    for (int i = 0; i < numero; i++)
                    {
                        Instantiate(Inimigo1, spawnT1.transform.position, Quaternion.identity);
@@ -77,13 +77,13 @@ public class Mother : MonoBehaviour
             if (ART2 == true)
             {
                 
-                    if (onda < 1000)
+                    if (onda < 100)
                     {
                         tempo++;
-                        if (tempo > 300)
+                        if (tempo > 150)
                         {
                             tempo = 0;
-                            int numero = onda * 1;
+                            int numero = onda * 2;
                             for (int i = 0; i < numero; i++)
                             {
                                 Instantiate(Inimigo2, spawnT2.transform.position, Quaternion.identity);
@@ -100,13 +100,13 @@ public class Mother : MonoBehaviour
             if (ART3 == true)
             {
                 
-                    if (onda < 1000)
+                    if (onda < 100)
                     {
                         tempo++;
-                        if (tempo > 300)
+                        if (tempo > 150)
                         {
                             tempo = 0;
-                            int numero = onda * 1;
+                            int numero = onda * 2;
                             for (int i = 0; i < numero; i++)
                             {
                                 Instantiate(Inimigo3, spawnT3.transform.position, Quaternion.identity);

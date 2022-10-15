@@ -171,7 +171,7 @@ MonoBehaviour:
   vela: {fileID: 6204123141348375014, guid: d2397c1482d9d674db19fb15e58da7ef, type: 3}
   localVela: {fileID: 1044161239}
   onda: 1
-  tempo: 300
+  tempo: 100
   T1Defeat: 0
   T2Defeat: 0
   T3Defeat: 0
