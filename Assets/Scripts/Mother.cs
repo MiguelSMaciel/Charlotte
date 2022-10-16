@@ -12,13 +12,12 @@ public class Mother : MonoBehaviour
     public GameObject Inimigo2;
     public GameObject Inimigo3;
 
-    public GameObject vela;
-    public GameObject localVela;
+    public GameObject vela1;
+    public GameObject vela2;
+    public GameObject vela3;
 
     public int onda = 1;
     public float tempo;
-
-    private float time;
 
     bool ART1;
     bool ART2;
@@ -45,7 +44,9 @@ public class Mother : MonoBehaviour
         ART3 = false;
         T3Defeat = false;
 
-        time = 0;
+        vela1.SetActive(false);
+        vela2.SetActive(false);
+        vela3.SetActive(false);
     }
 
     // Update is called once per frame
@@ -120,11 +121,15 @@ public class Mother : MonoBehaviour
         }
         if (T1Defeat == true)
         {
-            time++;
-            if (time <= 1)
-            {
-            Instantiate(vela, localVela.transform.position, Quaternion.identity);
-            }
+            vela1.SetActive(true);
+        }
+        if (T2Defeat == true)
+        {
+            vela2.SetActive(true);
+        }
+        if (T3Defeat == true)
+        {
+            vela3.SetActive(true);
         }
     }
     

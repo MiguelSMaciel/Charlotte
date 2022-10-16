@@ -8,10 +8,12 @@ public class MudarCena : MonoBehaviour
     private Mother mom;
     int minhaCena;
     private MudarCena CenaControl;
+    public GameObject portal;
 
     // Start is called before the first frame update
     void Start()
     {
+        portal.SetActive(false);
         mom = GameObject.FindGameObjectWithTag("T1").GetComponent<Mother>();
         CenaControl = GetComponent<MudarCena>();
         minhaCena = 1;
@@ -25,7 +27,7 @@ public class MudarCena : MonoBehaviour
         bool t3 = mom.T3Defeat;
         if (t1 && t2 && t3 == true)
         {
-           NextLevel();
+            portal.SetActive(true);
         }
     }
 

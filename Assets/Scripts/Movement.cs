@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     private HeroCombat heroCombatScript;
     private Mother mom;
     Stats statsScripts;
+    public MudarCena mudarCena;
+    public int cena;
 
     float tempoDano;
     bool takeDamage;
@@ -90,6 +92,10 @@ public class Movement : MonoBehaviour
         if (other.gameObject.layer == 8)
         {
             mom.EntrouNaAreaT3(true);
+        }
+        if(other.gameObject.layer == 9)
+        {
+            mudarCena.ChamarCena(cena);
         }
     }
     private void OnTriggerExit(Collider other)
