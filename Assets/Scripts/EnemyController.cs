@@ -51,12 +51,13 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay(Collision collision)
+    public void EntrouAreaAtaque()
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            anim.SetBool("Atk", true);
-        }
+         anim.SetBool("Atk", true);     
+    }
+    public void SaiuAreaAtaque()
+    {
+        anim.SetBool("Atk", false);
     }
 
     public void AtivarAtk()

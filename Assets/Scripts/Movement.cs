@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
 {
     public NavMeshAgent agent;
 
+    private EnemyController enemyController;
+
     public float rotateSpeedMovement = 0.1f;
     public float rotateVelocity;
 
@@ -27,6 +29,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyController = GameObject.FindGameObjectWithTag("Inimigo").GetComponent<EnemyController>();
         statsScripts = GetComponent<Stats>();
         mom = GameObject.FindGameObjectWithTag("T1").GetComponent<Mother>();       
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -116,6 +119,10 @@ public class Movement : MonoBehaviour
         {
             mudarCena.ChamarCena(cena);
         }
+        if (other.gameObject.tag == "EnemyRanged")
+        {
+            enemyController.EntrouAreaAtaque();
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -132,11 +139,16 @@ public class Movement : MonoBehaviour
             mom.SaiuDaAreaT3(true);
         }
     }
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerEnter(Collider colisao)
     {
-        if(collision.gameObject.tag == "Inimigo")
+        if (colisao.gameObject.tag == "AtkInimigo")
         {
-            
+            statsScripts.health -= 10;
+            Debug.Log("perdendo vida");
+            if (statsScripts.health <= 0)
+            {
+                //Destroy(this.gameObject);
+            }
         }
     }
     public void TomouDano()
