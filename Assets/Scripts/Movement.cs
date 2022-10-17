@@ -16,6 +16,11 @@ public class Movement : MonoBehaviour
     public MudarCena mudarCena;
     public int cena;
 
+    public float dashSpeed;
+    public float speedPlayer;
+
+    private float tempoDash=1f;
+
     float tempoDano;
     bool takeDamage;
 
@@ -33,6 +38,20 @@ public class Movement : MonoBehaviour
     {
         Mover();
         TomouDano();
+    }
+
+    public void Dash()
+    {
+        if (tempoDash > 0f)
+        {
+            tempoDash -= Time.deltaTime;
+            agent.speed = dashSpeed;
+            if (tempoDash <= 0f)
+            {
+                agent.speed = speedPlayer;
+                tempoDash = 1f;
+            }
+        }
     }
 
     void Mover()

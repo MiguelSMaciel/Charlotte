@@ -22,6 +22,8 @@ public class Abilities : MonoBehaviour
     bool isCooldown2 = false;
     public KeyCode ability2;
 
+    public GameObject Poder1;
+
     //Ability 2 Input Variables
     public Image targetCircle;
     public Image indicatorRangeCircle;
@@ -35,7 +37,7 @@ public class Abilities : MonoBehaviour
     bool isCooldown3 = false;
     public KeyCode ability3;*/
 
-    public GameObject Poder1;
+    Movement playerMove;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,8 @@ public class Abilities : MonoBehaviour
         skillshot.GetComponent<Image>().enabled = false;
         targetCircle.GetComponent<Image>().enabled = false;
         indicatorRangeCircle.GetComponent<Image>().enabled = false;
+
+        playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
     }
 
     // Update is called once per frame
@@ -105,6 +109,7 @@ public class Abilities : MonoBehaviour
         {
             isCooldown = true;
             abilityImage1.fillAmount = 1;
+            playerMove.Dash();
         }
 
         if (isCooldown)
