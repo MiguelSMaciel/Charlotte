@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 6a89c0a56b093f047b96403fb565f4ec, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1560,17 +1560,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1219805172 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1984170945341519961, guid: a3924caa62789464e937f02684fe1e8d, type: 3}
-  m_PrefabInstance: {fileID: 1709978873}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1286060276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1151388028547126963, guid: 07da6fb9a81cd4d448dd7f41e7544cb5, type: 3}
@@ -3051,6 +3040,10 @@ MonoBehaviour:
   agent: {fileID: 1877119277}
   rotateSpeedMovement: 0.075
   rotateVelocity: 0
+  mudarCena: {fileID: 0}
+  cena: 0
+  dashSpeed: 0
+  speedPlayer: 0
 --- !u!114 &1877119282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3082,7 +3075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  lvlText: {fileID: 1219805172}
+  lvlText: {fileID: 0}
   expBarImage: {fileID: 1678302989}
 --- !u!95 &1877119284
 Animator:

@@ -7,8 +7,6 @@ public class Movement : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-    private EnemyController enemyController;
-
     public float rotateSpeedMovement = 0.1f;
     public float rotateVelocity;
 
@@ -23,13 +21,9 @@ public class Movement : MonoBehaviour
 
     private float tempoDash=1f;
 
-    float tempoDano;
-    bool takeDamage;
-
     // Start is called before the first frame update
     void Start()
     {
-        enemyController = GameObject.FindGameObjectWithTag("Inimigo").GetComponent<EnemyController>();
         statsScripts = GetComponent<Stats>();
         mom = GameObject.FindGameObjectWithTag("T1").GetComponent<Mother>();       
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -40,7 +34,6 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Mover();
-        TomouDano();
     }
 
     public void Dash()
@@ -119,10 +112,14 @@ public class Movement : MonoBehaviour
         {
             mudarCena.ChamarCena(cena);
         }
-        if (other.gameObject.tag == "EnemyRanged")
+       /* if (other.gameObject.tag == "EnemyRanged")
         {
-            enemyController.EntrouAreaAtaque();
-        }
+            EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
+            if(enemyController != null)
+            {
+                enemyController.EntrouAreaAtaque();
+            }
+        }*/
     }
     private void OnTriggerExit(Collider other)
     {
@@ -138,34 +135,25 @@ public class Movement : MonoBehaviour
         {
             mom.SaiuDaAreaT3(true);
         }
+        /*if (other.gameObject.tag == "EnemyRanged")
+        {
+            EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
+            if (enemyController != null)
+            {
+                enemyController.SaiuAreaAtaque();
+            }
+        }*/
     }
     private void OnTriggerEnter(Collider colisao)
     {
         if (colisao.gameObject.tag == "AtkInimigo")
         {
-            statsScripts.health -= 10;
+            statsScripts.health -= 1;
             Debug.Log("perdendo vida");
             if (statsScripts.health <= 0)
             {
                 //Destroy(this.gameObject);
             }
-        }
-    }
-    public void TomouDano()
-    {
-        if (takeDamage == false)
-        {
-            TemporizadorDano();
-        }
-    }
-
-    void TemporizadorDano()
-    {
-        tempoDano += Time.deltaTime;
-        if (tempoDano > 0.5f)
-        {
-            takeDamage = true;
-            tempoDano = 0;
         }
     }
 }

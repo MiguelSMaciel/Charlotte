@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: bfee222913726ff49ad3cc7101b1c32c, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -168,7 +168,9 @@ MonoBehaviour:
   Inimigo1: {fileID: 2273920119043933278, guid: 3b4b1511821fce645a3b2b4adee59f8a, type: 3}
   Inimigo2: {fileID: 1338922824835447829, guid: c2df01707ef0f0b4fb316da3aeed0aea, type: 3}
   Inimigo3: {fileID: 5718748219539820103, guid: 51651f27a10927e4f9658d3d5cb6d15a, type: 3}
-  Inimigo4: {fileID: 5718748219539820103, guid: 51651f27a10927e4f9658d3d5cb6d15a, type: 3}
+  vela1: {fileID: 0}
+  vela2: {fileID: 0}
+  vela3: {fileID: 0}
   onda: 1
   tempo: 300
   T1Defeat: 0
@@ -2984,17 +2986,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1219805172 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1984170945341519961, guid: a3924caa62789464e937f02684fe1e8d, type: 3}
-  m_PrefabInstance: {fileID: 1709978873}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1257966322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 62e9985395251934aaf6578999705f64, type: 3}
@@ -4678,6 +4669,10 @@ MonoBehaviour:
   agent: {fileID: 1877119277}
   rotateSpeedMovement: 0.075
   rotateVelocity: 0
+  mudarCena: {fileID: 0}
+  cena: 0
+  dashSpeed: 0
+  speedPlayer: 0
 --- !u!114 &1877119282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4709,7 +4704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  lvlText: {fileID: 1219805172}
+  lvlText: {fileID: 0}
   expBarImage: {fileID: 1678302989}
 --- !u!95 &1877119284
 Animator:
@@ -4874,6 +4869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e18a87ccb5c6de479ef81e2578fe2a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portal: {fileID: 0}
 --- !u!114 &1947869553
 MonoBehaviour:
   m_ObjectHideFlags: 0

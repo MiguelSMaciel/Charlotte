@@ -16,9 +16,14 @@ public class EnemyController : MonoBehaviour
 
     public GameObject AreaDeAtk;
 
+    private float distancia;
+    public float atkCooldown;
+    private float tempo;
+
     // Start is called before the first frame update
     void Start()
     {
+        tempo = atkCooldown;
         statsScript = GetComponent<Stats>();
         Agente = GetComponent<NavMeshAgent>();
         Heroi = GameObject.FindGameObjectWithTag("Player");
@@ -41,6 +46,15 @@ public class EnemyController : MonoBehaviour
             anim.SetBool("Die", true);
             anim.SetBool("walk", false);
         }
+        distancia = Vector3.Distance(transform.position, Heroi.transform.position);
+        if (distancia <= 4)
+        {
+            EntrouAreaAtaque();
+        }
+        else if (distancia > 4)
+        {
+            SaiuAreaAtaque();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,7 +67,16 @@ public class EnemyController : MonoBehaviour
 
     public void EntrouAreaAtaque()
     {
-         anim.SetBool("Atk", true);     
+        tempo -= Time.deltaTime;
+        if(tempo <= 1)
+        {
+            anim.SetBool("Atk", true);
+        }
+        else if(tempo < 0)
+        {
+            tempo = atkCooldown;
+            anim.SetBool("Atk", false);
+        }
     }
     public void SaiuAreaAtaque()
     {
