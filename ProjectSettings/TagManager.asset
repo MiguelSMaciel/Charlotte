@@ -13,6 +13,7 @@ TagManager:
   - FxTemporaire
   - T2
   - T3
+  - AtkInimigo
   layers:
   - Default
   - TransparentFX

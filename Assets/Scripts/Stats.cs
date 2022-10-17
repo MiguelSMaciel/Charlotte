@@ -14,6 +14,7 @@ public class Stats : MonoBehaviour
 
     private GameObject player;
     public float expValue;
+    int earnXp=1;
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +28,18 @@ public class Stats : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject,0.3f);
+            earnXp--;
+
+            if (earnXp == 0)
+            {
             heroCombatScript.targetedEnemy = null;
             heroCombatScript.performMeleeAttack = false;
 
             //Give Exp
-            player.GetComponent<LevelUpStats>().SetExperience(expValue);
+            player.GetComponent<LevelUpStats>().SetExperience(expValue);          
+
+            }
         }
     }
 }

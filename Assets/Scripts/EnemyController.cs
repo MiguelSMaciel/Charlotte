@@ -12,7 +12,9 @@ public class EnemyController : MonoBehaviour
     public GameObject particleSpawn;
     public Animator anim;
 
-    private float tempoAnimSpawn=1.5f;
+    private float tempoAnimSpawn=0.7f;
+
+    public GameObject AreaDeAtk;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +30,16 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         tempoAnimSpawn -= Time.deltaTime;
-        if(tempoAnimSpawn < 0)
+        if(tempoAnimSpawn < 0 && statsScript.health > 0)
         {
-        Agente.SetDestination(Heroi.transform.position);
+            Agente.SetDestination(Heroi.transform.position);
             anim.SetBool("walk", true);
             particleSpawn.SetActive(false);
+        }
+        else if (statsScript.health <= 0)
+        {
+            anim.SetBool("Die", true);
+            anim.SetBool("walk", false);
         }
     }
 
@@ -41,7 +48,24 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.tag == "AreaAtkHeroi")
         {
             statsScript.health -= 40;
-            anim.SetBool("Die", true);
         }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            anim.SetBool("Atk", true);
+        }
+    }
+
+    public void AtivarAtk()
+    {
+        AreaDeAtk.SetActive(true);
+    }
+
+    public void DesativarAtk()
+    {
+        AreaDeAtk.SetActive(false);
     }
 }
