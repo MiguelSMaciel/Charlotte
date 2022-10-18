@@ -62,10 +62,10 @@ public class Mother : MonoBehaviour
         {
             if (ART1 == true)
             {              
-                 if (onda < 100)
+                 if (onda < 150)
                  {
                  tempo++;
-                 if (tempo > 50)
+                 if (tempo > 300)
                  {
                    tempo = 0;
                    int numero = onda * 1;
@@ -87,7 +87,7 @@ public class Mother : MonoBehaviour
                     if (onda2 < 100)
                     {
                         tempo2++;
-                        if (tempo2 > 50)
+                        if (tempo2 > 150)
                         {
                             tempo2 = 0;
                             int numero = onda2 * 1;
@@ -110,7 +110,7 @@ public class Mother : MonoBehaviour
                     if (onda3 < 100)
                     {
                         tempo3++;
-                        if (tempo3 > 50)
+                        if (tempo3 > 150)
                         {
                             tempo3 = 0;
                             int numero = onda3 * 1;

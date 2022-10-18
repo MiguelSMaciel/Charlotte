@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     public NavMeshAgent agent;
+    /*public GameObject pause;
+    public GameObject ui;
+    bool jogoPausado;*/
 
     public float rotateSpeedMovement = 0.1f;
     public float rotateVelocity;
@@ -37,6 +40,27 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Mover();
+       /* if (jogoPausado == false)
+        {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            pause.SetActive(true);
+                ui.SetActive(true);
+            jogoPausado = true;
+                Time.timeScale = 0f;
+        }
+        }
+        else
+        {
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                pause.SetActive(false);
+                ui.SetActive(false);
+                jogoPausado = false;
+                Time.timeScale = 1f;
+            }
+        }*/
+
     }
 
     public void Dash()

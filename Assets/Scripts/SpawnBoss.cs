@@ -16,6 +16,7 @@ public class SpawnBoss : MonoBehaviour
 
     public GameObject Boss;
     public GameObject localBoss;
+    public GameObject vidaboss;
 
     public int onda = 1;
     public float tempo;
@@ -52,6 +53,7 @@ public class SpawnBoss : MonoBehaviour
         T3Defeat = false;
 
         vela1.SetActive(false);
+        vidaboss.SetActive(false);
     }
 
     // Update is called once per frame
@@ -131,6 +133,7 @@ public class SpawnBoss : MonoBehaviour
         if (T1Defeat == true && T2Defeat == true && T3Defeat == true)
         {
             /*Instantiate(Boss,localBoss.transform.position, Quaternion.identity);*/
+            vidaboss.SetActive(true);
             Boss.SetActive(true);
         }       
     }

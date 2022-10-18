@@ -38,6 +38,7 @@ public class Abilities : MonoBehaviour
     public KeyCode ability3;*/
 
     Movement playerMove;
+    public Stats playerStats;
 
     // Start is called before the first frame update
     void Start()
@@ -109,7 +110,7 @@ public class Abilities : MonoBehaviour
         {
             isCooldown = true;
             abilityImage1.fillAmount = 1;
-            playerMove.Dash();
+            playerStats.health = 100;
         }
 
         if (isCooldown)
