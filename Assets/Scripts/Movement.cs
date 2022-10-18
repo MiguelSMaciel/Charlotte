@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -164,6 +165,7 @@ public class Movement : MonoBehaviour
             Debug.Log("perdendo vida");
             if (statsScripts.health <= 0)
             {
+                SceneManager.LoadScene(4);
                 //Destroy(this.gameObject);
             }
         }
