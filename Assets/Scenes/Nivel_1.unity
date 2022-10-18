@@ -168,6 +168,10 @@ MonoBehaviour:
   vela3: {fileID: 1332107892}
   onda: 1
   tempo: 0
+  onda2: 1
+  tempo2: 0
+  onda3: 1
+  tempo3: 0
   T1Defeat: 0
   T2Defeat: 0
   T3Defeat: 0
@@ -900,6 +904,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &403553449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 938141068629427722, guid: 66c87bcb3d21e564a8b1c0ada4704095, type: 3}
+  m_PrefabInstance: {fileID: 4583203444452290339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &411255074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1664,17 +1679,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dccdc598a11e09b4ab29ee20182f1309, type: 3}
   m_PrefabInstance: {fileID: 777274332}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &791007451 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4583203443929858040, guid: 66c87bcb3d21e564a8b1c0ada4704095, type: 3}
-  m_PrefabInstance: {fileID: 4583203444452290339}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &806520863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4157,7 +4161,7 @@ PrefabInstance:
     - target: {fileID: 1984170945623337328, guid: a3924caa62789464e937f02684fe1e8d, type: 3}
       propertyPath: playerSlider3D
       value: 
-      objectReference: {fileID: 791007451}
+      objectReference: {fileID: 403553449}
     - target: {fileID: 1984170945623337330, guid: a3924caa62789464e937f02684fe1e8d, type: 3}
       propertyPath: m_SizeDelta.x
       value: 374.1588
@@ -4529,6 +4533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portal: {fileID: 226162642}
+  lvlButtons: []
 --- !u!114 &1947869553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4952,6 +4957,10 @@ PrefabInstance:
       propertyPath: expBarImage
       value: 
       objectReference: {fileID: 1678302989}
+    - target: {fileID: 4583203442843876882, guid: 66c87bcb3d21e564a8b1c0ada4704095, type: 3}
+      propertyPath: cena
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4583203442843876882, guid: 66c87bcb3d21e564a8b1c0ada4704095, type: 3}
       propertyPath: mudarCena
       value: 

@@ -168,6 +168,10 @@ MonoBehaviour:
   vela3: {fileID: 1332107892}
   onda: 1
   tempo: 0
+  onda2: 1
+  tempo2: 0
+  onda3: 1
+  tempo3: 0
   T1Defeat: 0
   T2Defeat: 0
   T3Defeat: 0
@@ -1613,17 +1617,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 4}
   m_Center: {x: -0.000045776367, y: 2.0000057, z: 0.000015258789}
---- !u!114 &791007451 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4583203443929858040, guid: 66c87bcb3d21e564a8b1c0ada4704095, type: 3}
-  m_PrefabInstance: {fileID: 4583203444452290339}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &806520863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4352,7 +4345,7 @@ PrefabInstance:
     - target: {fileID: 1984170945623337328, guid: a3924caa62789464e937f02684fe1e8d, type: 3}
       propertyPath: playerSlider3D
       value: 
-      objectReference: {fileID: 791007451}
+      objectReference: {fileID: 4583203444452290340}
     - target: {fileID: 1984170945623337330, guid: a3924caa62789464e937f02684fe1e8d, type: 3}
       propertyPath: m_SizeDelta.x
       value: 374.1588
@@ -4605,6 +4598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portal: {fileID: 226162642}
+  lvlButtons: []
 --- !u!114 &1947869553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5046,3 +5040,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66c87bcb3d21e564a8b1c0ada4704095, type: 3}
+--- !u!114 &4583203444452290340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 938141068629427722, guid: 66c87bcb3d21e564a8b1c0ada4704095, type: 3}
+  m_PrefabInstance: {fileID: 4583203444452290339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
