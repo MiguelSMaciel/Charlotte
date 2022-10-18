@@ -19,6 +19,12 @@ public class Mother : MonoBehaviour
     public int onda = 1;
     public float tempo;
 
+    public int onda2 = 1;
+    public float tempo2;
+
+    public int onda3 = 1;
+    public float tempo3;
+
     bool ART1;
     bool ART2;
     bool ART3;
@@ -78,18 +84,18 @@ public class Mother : MonoBehaviour
             if (ART2 == true)
             {
                 
-                    if (onda < 100)
+                    if (onda2 < 100)
                     {
-                        tempo++;
-                        if (tempo > 50)
+                        tempo2++;
+                        if (tempo2 > 50)
                         {
-                            tempo = 0;
-                            int numero = onda * 1;
+                            tempo2 = 0;
+                            int numero = onda2 * 1;
                             for (int i = 0; i < numero; i++)
                             {
                                 Instantiate(Inimigo2, spawnT2.transform.position, Quaternion.identity);
                             }
-                            onda++;
+                            onda2++;
 
                         }
                     }
@@ -101,18 +107,18 @@ public class Mother : MonoBehaviour
             if (ART3 == true)
             {
                 
-                    if (onda < 100)
+                    if (onda3 < 100)
                     {
-                        tempo++;
-                        if (tempo > 50)
+                        tempo3++;
+                        if (tempo3 > 50)
                         {
-                            tempo = 0;
-                            int numero = onda * 1;
+                            tempo3 = 0;
+                            int numero = onda3 * 1;
                             for (int i = 0; i < numero; i++)
                             {
                                 Instantiate(Inimigo3, spawnT3.transform.position, Quaternion.identity);
                             }
-                            onda++;
+                            onda3++;
 
                         }
                     }

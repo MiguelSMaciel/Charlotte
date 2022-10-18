@@ -112,6 +112,12 @@ public class Movement : MonoBehaviour
         {
             mudarCena.ChamarCena(cena);
         }
+        if(other.gameObject.layer == 10)
+        {
+            mom.EntrouNaAreaT1(true);
+            mom.EntrouNaAreaT2(true);
+            mom.EntrouNaAreaT3(true);
+        }
        /* if (other.gameObject.tag == "EnemyRanged")
         {
             EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
@@ -133,6 +139,12 @@ public class Movement : MonoBehaviour
         }
         if (other.gameObject.layer == 8)
         {
+            mom.SaiuDaAreaT3(true);
+        }
+        if (other.gameObject.layer == 10)
+        {
+            mom.SaiuDaAreaT1(true);
+            mom.SaiuDaAreaT2(true);
             mom.SaiuDaAreaT3(true);
         }
         /*if (other.gameObject.tag == "EnemyRanged")
