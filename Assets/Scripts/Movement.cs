@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
 
     private HeroCombat heroCombatScript;
     private Mother mom;
+    private SpawnBoss spawnBoss;
     Stats statsScripts;
     public MudarCena mudarCena;
     public int cena;
@@ -25,6 +26,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnBoss = GameObject.FindGameObjectWithTag("T1").GetComponent<SpawnBoss>();
         statsScripts = GetComponent<Stats>();
         mom = GameObject.FindGameObjectWithTag("T1").GetComponent<Mother>();       
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -100,14 +102,17 @@ public class Movement : MonoBehaviour
         if(other.gameObject.layer == 6)
         {
             mom.EntrouNaAreaT1(true);
+            spawnBoss.EntrouNaAreaT1(true);
         }
         if (other.gameObject.layer == 7)
         {
             mom.EntrouNaAreaT2(true);
+            spawnBoss.EntrouNaAreaT2(true);
         }
         if (other.gameObject.layer == 8)
         {
             mom.EntrouNaAreaT3(true);
+            spawnBoss.EntrouNaAreaT3(true);
         }
         if(other.gameObject.layer == 9)
         {
@@ -118,6 +123,10 @@ public class Movement : MonoBehaviour
             mom.EntrouNaAreaT1(true);
             mom.EntrouNaAreaT2(true);
             mom.EntrouNaAreaT3(true);
+
+            spawnBoss.EntrouNaAreaT1(true);
+            spawnBoss.EntrouNaAreaT2(true);
+            spawnBoss.EntrouNaAreaT3(true);
         }
        /* if (other.gameObject.tag == "EnemyRanged")
         {
@@ -133,20 +142,27 @@ public class Movement : MonoBehaviour
         if(other.gameObject.layer == 6)
         {
             mom.SaiuDaAreaT1(true);
+            spawnBoss.SaiuDaAreaT1(true);
         }
         if (other.gameObject.layer == 7)
         {
             mom.SaiuDaAreaT2(true);
+            spawnBoss.SaiuDaAreaT2(true);
         }
         if (other.gameObject.layer == 8)
         {
             mom.SaiuDaAreaT3(true);
+            spawnBoss.SaiuDaAreaT3(true);
         }
         if (other.gameObject.layer == 10)
         {
             mom.SaiuDaAreaT1(true);
             mom.SaiuDaAreaT2(true);
             mom.SaiuDaAreaT3(true);
+
+            spawnBoss.SaiuDaAreaT1(true);
+            spawnBoss.SaiuDaAreaT2(true);
+            spawnBoss.SaiuDaAreaT3(true);
         }
         /*if (other.gameObject.tag == "EnemyRanged")
         {

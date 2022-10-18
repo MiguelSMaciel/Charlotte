@@ -13,12 +13,19 @@ public class MudarCena : MonoBehaviour
     public GameObject cadeado;
     public GameObject cadeado2;
 
+    public Stats bossStats;
+    private SpawnBoss sb;
+
+    public GameObject finalJogo;
+
     // Start is called before the first frame update
     void Start()
     {
+        finalJogo.SetActive(false);
         minhaCena = PlayerPrefs.GetInt("levelAt");
         portal.SetActive(false);
         mom = GameObject.FindGameObjectWithTag("T1").GetComponent<Mother>();
+        sb = GameObject.FindGameObjectWithTag("T1").GetComponent<SpawnBoss>();
         CenaControl = GetComponent<MudarCena>();
     }
 
@@ -31,6 +38,11 @@ public class MudarCena : MonoBehaviour
         if (t1 && t2 && t3 == true)
         {
             portal.SetActive(true);
+        }
+
+        if(bossStats.health <= 0 && sb.T1Defeat==true && sb.T2Defeat ==true && sb.T3Defeat==true)
+        {
+            finalJogo.SetActive(true) ;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
